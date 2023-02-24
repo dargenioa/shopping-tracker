@@ -1,4 +1,4 @@
-package com.shoppingtracker.shoppingtracker;
+package com.projects.shoppingtracker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

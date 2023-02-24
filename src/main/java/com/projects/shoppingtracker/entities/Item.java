@@ -21,5 +21,5 @@ public class Item {
     private Integer quantity;
     @ManyToOne
     @JoinColumn(name = "trip_id")
-    private Trips tripId;
+    private Trip tripId;
 }

@@ -2,10 +2,9 @@ package com.projects.shoppingtracker.controllers;
 
 import com.projects.shoppingtracker.entities.Trip;
 import com.projects.shoppingtracker.repositories.TripRepository;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/v1/trip")
@@ -17,9 +16,19 @@ public class TripController {
         this.tripRepository = tripsRepository;
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public Trip addNewTrip(@RequestBody Trip trips) {
         return tripRepository.save(trips);
     }
+
+    @PostMapping("/update/{id}")
+    public Trip updateTrip(@RequestBody Trip trip, @PathVariable String id) {
+        return tripRepository.save(trip);
+    }
+    @GetMapping("/")
+    public List<Trip> getAllTrips() {
+        return tripRepository.findAll();
+    }
+
 
 }

@@ -19,7 +19,5 @@ public class Item {
     private Integer id;
     private String name;
     private Integer quantity;
-    @ManyToOne
-    @JoinColumn(name = "trip_id")
-    private Trip tripId;
+    private Integer tripId;
 }
